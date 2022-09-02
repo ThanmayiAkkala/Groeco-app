@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 200px;
+      background-color: #f1f1f1;
+    }
+
+    li a {
+      display: block;
+      color: #000;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+
+    li a.active {
+      background-color: #04aa6d;
+      color: white;
+    }
+
+    li a:hover:not(.active) {
+      background-color: #555;
+      color: white;
+    }
+  </style>
+  <body ng-app="myApp">
+    <h1>Welcome to the groeco store!!</h1>
+    <ul>
+      <li><a class="active" href="#/!">Home</a></li>
+      <li><a href="#!banana">About</a></li>
+      <li><a href="#!tomato">Contact</a></li>
+    </ul>
+
+    <p>Click on the links to know about us.</p>
+
+    <div ng-view></div>
+    <br />
+    <br />
+    <center><h3>Click here to start shopping!</h3></center>
+    <center>
+      <a href="./pro.html"><input type="submit" name="Shop!!" id="submit" /></a>
+    </center>
+    <script>
+      var app = angular.module('myApp', ['ngRoute']);
+      app.config(function ($routeProvider) {
+        $routeProvider
+          .when('/', {
+            template: '<h1>Home</h1><p>Click on the links to Know about us</p>',
+          })
+          .when('/banana', {
+            template:
+              '<h1>About us</h1><p>The groeco is tool that helps you to get the products of choice while resting at home and with minimal costs!!.</p>',
+          })
+          .when('/tomato', {
+            template: '<h1>Contact</h1><p>E-mail:botsaan@gmail.com</p>',
+          });
+      });
+    </script>
+  </body>
+</html>

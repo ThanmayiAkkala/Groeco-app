@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login Page in HTML with CSS Code Example</title>
+    <style>
+      p {
+        color: black;
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script>
+      function validateForm() {
+        let x = document.forms['myForm']['fname'].value;
+        if (x == '') {
+          alert('Name must be filled out');
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <div class="box-form">
+      <div class="left">
+        <div class="overlay">
+          <h1>Groceco</h1>
+          <i> <p>Get the choice of your groceries from anywhere!!</p></i>
+          <span>
+            <p style="background-color: pink">login with social media</p>
+            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#"
+              ><i class="fa fa-twitter" aria-hidden="true"></i> Login with
+              Twitter</a
+            >
+          </span>
+        </div>
+      </div>
+
+      <div class="right">
+        <h5>Sign up</h5>
+        <p>
+          Already have an account? <a href="./index.html">Login into Account</a> it takes
+          less than a minute
+        </p>
+        <div class="inputs">
+          <form
+            name="myForm"
+            method="post"
+          >
+            <input type="text" placeholder="user name" name="fname" required />
+            <br />
+          <input type="password" placeholder="password" required/>
+        </div>
+
+        <br /><br />
+
+        <div class="remember-me--forget-password">
+          <!-- Angular -->
+          <label>
+            <input type="checkbox" name="item" checked />
+            <span class="text-checkbox">Remember me</span>
+          </label>
+  
+        </div>
+        <a
+          href="C:\Users\THANM\Downloads\login-page-in-html-with-css-code\grocery\pro.html"
+          ><button>Signup</button></a
+        >
+      </form>
+        <br />
+      </div>
+    </div>
+    <!-- partial -->
+  </body>
+</html>

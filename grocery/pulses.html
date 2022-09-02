@@ -1,0 +1,89 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>
+      div {
+        transition: all linear 0.5s;
+        background-color: lightblue;
+        height: 100px;
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+
+      .ng-hide {
+        height: 0;
+        width: 0;
+        background-color: transparent;
+        top: -200px;
+        left: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      ng-app="myApp"
+      ng-controller="myCtrl"
+      style="background-color: lavender"
+    >
+      <h1>Hide the ADD: <input type="checkbox" ng-model="myCheck" /></h1>
+
+      <div ng-hide="myCheck"></div>
+
+      <script>
+        var app = angular.module('myApp', ['ngAnimate']);
+      </script>
+
+      <h1>{{myHeader}}</h1>
+    </div>
+
+    <script>
+      var app = angular.module('myApp', []);
+      app.controller('myCtrl', function ($scope, $timeout) {
+        $scope.myHeader = 'Summer sale!';
+        $timeout(function () {
+          $scope.myHeader = '30% off on 1500 above';
+        }, 2000);
+      });
+    </script>
+    <center>
+      <h1 style="font-family: Arial, Helvetica, sans-serif">
+        Click on the image for choice of your pulses
+      </h1>
+      <img
+        src="https://th.bing.com/th/id/OIP.KC18EInlndDRSKnWBRukUgHaFr?w=212&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7"
+        alt="Workplace"
+        usemap="#workmap"
+        width="400"
+        height="379"
+      />
+
+      <map name="workmap">
+        <area
+          shape="circle"
+          coords="34,44,270,350"
+          alt="chana"
+          href="./chanadal.html"
+        />
+        <area
+          shape="circle"
+          coords="290,172,333,250"
+          alt="urad"
+          href="./urad.html"
+        />
+        <area
+          shape="circle"
+          coords="337,300,44"
+          alt="toordal"
+          href="./toordal.html"
+        />
+      </map>
+    </center>
+  </body>
+</html>
